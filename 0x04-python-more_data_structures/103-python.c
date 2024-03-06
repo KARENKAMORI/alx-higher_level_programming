@@ -43,7 +43,7 @@ void print_python_bytes(PyObject *p)
 void print_python_list(PyObject *p)
 {
 	Py_ssize_t s = 0;
-	PyObject *item;
+	PyObject *x;
 	int n = 0;
 
 	if (PyList_CheckExact(p))
@@ -56,10 +56,10 @@ void print_python_list(PyObject *p)
 
 		while (n < s)
 		{
-			item = PyList_GET_ITEM(p, n);
-			printf("Element %d: %s\n", n, item->ob_type->tp_name);
-			if (PyBytes_Check(item))
-				print_python_bytes(item);
+			x = PyList_GET_ITEM(p, n);
+			printf("Element %d: %s\n", n, x->ob_type->tp_name);
+			if (PyBytes_Check(x))
+				print_python_bytes(x);
 			n++;
 		}
 	}
