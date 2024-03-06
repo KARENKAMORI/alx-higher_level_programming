@@ -42,19 +42,19 @@ void print_python_bytes(PyObject *p)
 
 void print_python_list(PyObject *p)
 {
-	Py_ssize_t size = 0;
+	Py_ssize_t s = 0;
 	PyObject *item;
 	int i = 0;
 
 	if (PyList_CheckExact(p))
 	{
-		size = PyList_Size(p);
+		s = PyList_Size(p);
 
 		printf("[*] Python list info\n");
-		printf("[*] Size of the Python List = %zd\n", size);
+		printf("[*] Size of the Python List = %zd\n", s);
 		printf("[*] Allocated = %lu\n", ((PyListObject *)p)->allocated);
 
-		while (i < size)
+		while (i < s)
 		{
 			item = PyList_GET_ITEM(p, i);
 			printf("Element %d: %s\n", i, item->ob_type->tp_name);
