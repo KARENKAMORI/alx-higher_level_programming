@@ -24,7 +24,7 @@ class Rectangle():
         rectangle = ""
 
         if self.__width > 0 and self.__height > 0:
-            for y in range(self.__height):
+            for i in range(self.__height):
                 rectangle += '#' * self.__width + '\n'
 
         return rectangle[:-1]
