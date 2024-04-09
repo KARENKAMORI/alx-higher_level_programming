@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Module: Rectangle.
 
-This module contains a rectangle class definition.
+Module contains a rectangle class definition.
 
 """
 
