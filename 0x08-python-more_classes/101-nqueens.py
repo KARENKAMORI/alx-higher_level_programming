@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Module: N Queens.
 
-N Queens problem solver.
+Contains the N Queens problem solver.
 """
 import sys
 
@@ -11,39 +11,39 @@ def error_exit(message="", code=1):
 
     Args:
         message (str): the stdout message to display.
-        code (int): exit code.
+        code (int): the exit code.
     """
     print(message)
     exit(code)
 
 
 def test_pos(board, y):
-    """Tests if a queen can be placed at the current position.
-
-    Args:
-        board (list): the chessboard.
-        y (int): parameter height.
-    """
-    for x in range(y):
-        if board[y][1] is board[x][1]:
-            return False
-        if abs(board[y][1] - board[x][1]) == y - x:
-            return False
-    return True
-
-
-def rec_backtrack(board, y):
-    """Backtrack of the possibilities.
+    """Tests if a queen can be placed at current position.
 
     Args:
         board (list): chessboard.
         y (int): parameter height.
     """
+    for i in range(y):
+        if board[y][1] is board[i][1]:
+            return False
+        if abs(board[y][1] - board[i][1]) == y - i:
+            return False
+    return True
+
+
+def rec_backtrack(board, y):
+    """Backtrack the possibilities.
+
+    Args:
+        board (list): the chessboard.
+        y (int): Parameter height.
+    """
     if y is N:
         print(board)
     else:
-        for i in range(N):
-            board[y][1] = i
+        for x in range(N):
+            board[y][1] = x
             if test_pos(board, y):
                 rec_backtrack(board, y + 1)
 
