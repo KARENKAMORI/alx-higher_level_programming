@@ -1,14 +1,11 @@
 #!/usr/bin/python3
-"""Module: MyList.
+"""Module: Lookup.
 
-Contains a class that inherits from a list
-and a sorted list method to print.
+Contains a function that returns a list of
+available object attributes and methods
 """
 
 
-class MyList(list):
-    """MyList class definition."""
-
-    def print_sorted(self):
-        """sorted list print function."""
-        print(sorted(self))
+def lookup(obj):
+    """Returns list of available object attributes and methods"""
+    return dir(obj)
