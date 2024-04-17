@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Module: Student.
 
-Has a Student class and it's methods.
+Has a Student class and methods.
 """
 
 
